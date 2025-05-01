@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Student Info Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h2>Student Info Manager</h2>
+    <input type="text" id="name" placeholder="Enter Name">
+    <input type="number" id="age" placeholder="Enter Age">
+    <input type="email" id="email" placeholder="Enter Email">
+
+    <button onclick="addStudent()">Add Student</button>
+
+    <input type="text" id="search" placeholder="Search by Name" onkeyup="searchStudent()">
+    <div id="studentList"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
