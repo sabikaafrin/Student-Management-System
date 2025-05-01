@@ -35,9 +35,19 @@ function displayStudents(list) {
 }
 
 function searchStudent() {
-  const searchValue = document.getElementById("search").value;
+  const searchValue = document.getElementById("search").value.toLowerCase();
   const filtered = students.filter((student) =>
-    student.name.includes(searchValue)
+    student.name.toLowerCase().includes(searchValue)
   );
-  displayStudents(filtered);
+
+  const resultsElement = document.getElementById("results");
+  const studentList = document.getElementById("studentList");
+
+  if (filtered.length === 0) {
+    studentList.innerHTML = ""; 
+    resultsElement.innerHTML = "No search results found";
+  } else {
+    displayStudents(filtered);
+    resultsElement.innerHTML = ""; 
+  }
 }
